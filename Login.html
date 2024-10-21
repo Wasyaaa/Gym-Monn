@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Gym Monn</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pendaftaran Gym Monn</h1>
+        <form id="pendaftaranForm" action="submit.php" method="POST" onsubmit="return pindahKePembayaran()">
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telepon">Nomor Telepon:</label>
+            <input type="tel" id="telepon" name="telepon" required>
+
+            <label for="kelas">Kelas Yang Di Daftar:</label>
+            <select id="kelas" name="kelas" required>
+                <option value="pemula">Kelas Pemula</option>
+                <option value="kardio">Kelas Kardio</option>
+                <option value="otot">Kelas Masa Otot</option>
+                <option value="yoga">Kelas Yoga</option>
+                <option value="bodycontest">Kelas BodyContest</option>
+            </select>
+
+            <label for="keanggotaan">Jenis Keanggotaan:</label>
+            <select id="keanggotaan" name="keanggotaan" required>
+                <option value="bulanan">Bulanan</option>
+                <option value="tahunan">Tahunan</option>
+            </select>
+
+            <button type="submit">Daftar</button>
+        </form>
+    </div>
+
+    <script>
+        function pindahKePembayaran() {
+            window.location.href = "Pembayaran.html";
+            return false; 
+        }
+    </script>
+
+    <style>
+        /* Pastikan html dan body mengisi seluruh halaman */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Atur gambar background agar penuh */
+        html {
+            background: url('FotoLogin.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Buat container transparan agar background terlihat */
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.8); /* Transparansi pada form */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            margin-top: 10px;
+            display: block;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</body>
+</html>

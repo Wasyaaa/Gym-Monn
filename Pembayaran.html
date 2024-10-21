@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran Gym</title>
+    <style>
+        /* Memastikan html dan body mengisi seluruh halaman dan memungkinkan scroll jika diperlukan */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Atur gambar background agar penuh */
+        html {
+            background: url('FotoPembayaran.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* Mengatur body agar form bisa scroll jika halaman terlalu kecil */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100%;
+            overflow-y: auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparansi untuk efek gelap */
+        }
+
+        /* Form container dengan transparansi */
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9); /* Transparansi pada form */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0; /* Margin untuk memberikan ruang */
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-submit:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Pembayaran Gym</h2>
+        <form id="formPembayaran" action="proses_pembayaran.php" method="POST" onsubmit="return pindahKePbSukses()">
+            <div class="form-group">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" name="nama" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nomor_hp">Nomor HP</label>
+                <input type="text" id="nomor_hp" name="nomor_hp" required>
+            </div>
+
+            <div class="form-group">
+                <label for="paket">Pilih Paket Gym</label>
+                <select id="paket" name="paket" required>
+                    <option value="bulanan">Bulanan - Rp 300,000</option>
+                    <option value="tahunan">Tahunan - Rp 3,000,000</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="nomor_kartu">Nomor Kartu Kredit/Debit</label>
+                <input type="text" id="nomor_kartu" name="nomor_kartu" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Bayar Sekarang</button>
+        </form>
+    </div>
+
+    <script>
+        function pindahKePbSukses() {
+            // Mengalihkan pengguna ke halaman sukses setelah pengiriman formulir
+            window.location.href = "PbSukses.html";
+            return false; // Mencegah pengiriman form asli
+        }
+    </script>
+
+</body>
+</html>
